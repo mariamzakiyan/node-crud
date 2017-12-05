@@ -1,0 +1,1 @@
+module.exports.customHelper = () => {}; // is it the correct way to add helper ?
