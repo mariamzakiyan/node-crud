@@ -12,11 +12,15 @@ app.use((req,res,next) => {
     next();
 });
 
-router.get('/', require('./routes/user/getAll'));
-router.post('/create', require('./routes/user/create'));
+// router.get('/', require('./routes/user/getAll'));
+// router.post('/create', require('./routes/user/create'));
 // router.get('/:id', require('./routes/user/getSingle'));
 // router.put('/:id', require('./routes/user/update'));
 // router.delete('/:id', require('./routes/user/delete'));
+
+router.route('/')
+    .get(require('./routes/user/getAll'))
+    .post(require('./routes/user/create'));
 
 router.route('/:id')
     .get(require('./routes/user/getSingle'))
